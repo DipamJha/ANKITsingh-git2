@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="otp.css">
+</head>
+<body>
+    <div class="container">
+        <div class="illustration">
+            <img src="otpimg.jpg" alt="Illustration">
+        </div>
+        <div class="otp-section">
+            <h2>Check For OTP</h2>
+            <p>Enter the OTP sent to your email address</p>
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" oninput="moveToNext(this, 'otp2')">
+                <input type="text" maxlength="1" id="otp2" oninput="moveToNext(this, 'otp3')">
+                <input type="text" maxlength="1" id="otp3" oninput="moveToNext(this, 'otp4')">
+                <input type="text" maxlength="1" id="otp4" oninput="moveToNext(this, 'otp5')">
+                <input type="text" maxlength="1" id="otp5" oninput="moveToNext(this, 'otp6')">
+                <input type="text" maxlength="1" id="otp6">
+            </div>
+            <p class="resend">Didn't get OTP? <span id="timer">Resend OTP 0:59</span></p>
+            <button class="verify-btn">Verify</button>
+        </div>
+    </div>
+
+    <script>
+        function moveToNext(current, nextFieldID) {
+            if (current.value.length === 1) {
+                document.getElementById(nextFieldID).focus();
+            }
+        }
+
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            const countdown = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = `Resend OTP ${minutes}:${seconds}`;
+
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "Resend OTP";
+                    // Optionally enable the resend OTP link/button here
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const duration = 59; // 59 seconds timer
+            const display = document.querySelector('#timer');
+            startTimer(duration, display);
+        };
+    </script>
+</body>
+</html>
