@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d; 
+    color: #FFFFFF;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 200px; 
+    height: auto;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.left-section img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container {
+    width: 80%;
+    max-width: 400px;
+    text-align: left; 
+}
+
+h1 {
+    font-size: 32px; 
+    margin-bottom: 20px;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #666;
+    margin: 0 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1e1e1e; 
+    color: #FFFFFF;
+}
+
+.input-group input:focus {
+    outline: 2px solid #6A40E4;
+    outline-offset: 2px;
+}
+
+.toggle-password {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: #666;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #6A40E4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-btn:focus {
+    outline: 2px solid #5433b4;
+}
+
+.login-btn:hover {
+    background-color: #5433b4;
+}
+
+a {
+    color: #6A40E4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.center-text {
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-section, .right-section {
+        flex: none;
+        width: 100%;
+    }
+}
